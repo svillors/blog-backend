@@ -96,7 +96,7 @@
               {% if post.image_url %}
                 <img
                   class="img-fluid"
-                  src="{% static '{{ post.image_url }}' %}"
+                  src="../{{ post.image_url }}"
                   alt=""
                 />
               {% else %}
@@ -133,7 +133,7 @@
                   href="#"
                   ><span class="align-middle mr-2"
                     ><i class="ti-themify-favicon"></i></span
-                  >03 Comments</a
+                  >{{ post.comments|length}} Comments</a
                 >
                 <div class="news_socail ml-sm-auto mt-sm-0 mt-2">
                   <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -145,7 +145,7 @@
             </div>
 
             <div class="comments-area">
-              <h4>03 Comments</h4>
+              <h4>{{ post.comments|length}} Comments</h4>
               {% for comment in post.comments %}
               <div class="comment-list">
                 <div class="single-comment justify-content-between d-flex">
